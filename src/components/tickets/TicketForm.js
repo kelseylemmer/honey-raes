@@ -7,7 +7,8 @@ export const TicketForm = () => {
         initial state object
     */
     const [ticket, update] = useState({
-
+            description: "",
+            emergency: false
     })
     /*
         TODO: Use the useNavigation() hook so you can redirect
@@ -38,7 +39,13 @@ export const TicketForm = () => {
                         className="form-control"
                         placeholder="Brief description of problem"
                         value={ticket.description}
-                        onChange={ } />
+                        onChange={ 
+                            (evt) => {
+                                const copy = {...ticket}
+                                copy.description = evt.target.value
+                                update(copy)
+                            }
+                        } />
                 </div>
             </fieldset>
             <fieldset>
@@ -46,7 +53,13 @@ export const TicketForm = () => {
                     <label htmlFor="name">Emergency:</label>
                     <input type="checkbox"
                         value={ticket.emergency}
-                        onChange={ } />
+                        onChange={ 
+                            (evt) => {
+                                const copy = {...ticket}
+                                copy.emergency = evt.target.checked
+                                update(copy)
+                            }
+                        } />
                 </div>
             </fieldset>
             <button className="btn btn-primary">

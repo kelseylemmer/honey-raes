@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "./Tickets.css"
+import { useNavigate } from "react-router-dom"
 
 export const TicketList = () => {
     const [tickets, setTickets] = useState([])
