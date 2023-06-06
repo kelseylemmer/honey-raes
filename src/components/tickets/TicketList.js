@@ -89,7 +89,7 @@ export const TicketList = ({ searchTermState }) => {
                 </>
                 : <>
                     <button onClick={() => navigate("/ticket/create")}>Create Ticket</button>
-                    <button onClick={() => updateOpenOnly(true)}>Open Ticket</button>
+                    <button onClick={() => updateOpenOnly(true)}>Open Tickets</button>
                     <button onClick={() => updateOpenOnly(false)}>All My Tickets</button>
                 </>
         }
