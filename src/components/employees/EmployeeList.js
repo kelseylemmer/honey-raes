@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import "./employees.css"
+import { Employee } from "./Employee"
 
 
 export const EmployeeList = () => {
@@ -6,7 +8,7 @@ export const EmployeeList = () => {
 
   useEffect(
     () => {
-      return fetch(`http://localhost:8088/users?isStaff=true`)
+      fetch(`http://localhost:8088/users?isStaff=true`)
         .then(response => response.json())
         .then((employeeArray) => {
           setEmployees(employeeArray)
@@ -17,12 +19,10 @@ export const EmployeeList = () => {
 
   return <article className="employees" >
     {
-      employees.map(employee => {
-        return <section className="employee" key={`employee--${employee.id}`} >
-          <div>Name: {employee.fullName} </div>
-          <div> Email: {employee.email} </div>
-        </section>
-      })
+      employees.map(employee => <Employee key={`${employee.id}`}
+        id={employee.id} 
+        fullName={employee.fullName} 
+        email={employee.email}/>)
     }
   </article>
 
