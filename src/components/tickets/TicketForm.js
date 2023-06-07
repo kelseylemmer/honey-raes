@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+
 
 export const TicketForm = () => {
     /*
@@ -32,13 +33,13 @@ export const TicketForm = () => {
         }
 
         // TODO: Perform the fetch() to POST the object to the API
-        return fetch(`http://localhost:8088/serviceTickets`, {
+        return fetch(`http://localhost:8088//serviceTickets`), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(ticketToSendToAPI)
-        })
+        }
             .then(response => response.json())
             .then(() => {
                 navigate("/tickets")

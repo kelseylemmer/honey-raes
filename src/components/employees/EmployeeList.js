@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./employees.css"
+import "./Employee.css"
 import { Employee } from "./Employee"
 
 
@@ -20,9 +20,9 @@ export const EmployeeList = () => {
   return <article className="employees" >
     {
       employees.map(employee => <Employee key={`${employee.id}`}
-        id={employee.id} 
-        fullName={employee.fullName} 
-        email={employee.email}/>)
+        id={employee.id}
+        fullName={employee.fullName}
+        email={employee.email} />)
     }
   </article>
 
